@@ -44,3 +44,34 @@ fazer_barulho(gato)
 # Chamando a função para demonstrar a herança e polimorfismo
 mover_animal(cachorro)
 mover_animal(gato)
+
+
+print("exemplo de abstração")
+
+from abc import ABC, abstractmethod
+
+class Veiculo(ABC):
+
+    @abstractmethod
+    def ligar(self):
+        pass
+    @abstractmethod
+    def desligar(self):
+        pass
+
+class Carro(Veiculo):
+    def __init__(self) -> None:
+         pass
+    
+    def ligar(self):
+        return "vroooom"
+    
+    def desligar(self):
+        return "desligou"
+    
+
+carro_amarelo = Carro()
+print(carro_amarelo.ligar())
+print(carro_amarelo.desligar())
+
+
