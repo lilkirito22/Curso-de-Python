@@ -1,4 +1,5 @@
-from flask import Flask
+from flask import Flask, request
+from models.task import Task
 
 app= Flask(__name__)
 
@@ -6,13 +7,14 @@ app= Flask(__name__)
 #CRUD
 #Create, Read, Update and Delete 
 
-@app.route("/")
-def hello_world():
-  return "Ola Mundo"
+tasks = []
 
-@app.route("/cars")
-def cars():
-  return "Formula 1"
+@app.route('/tasks', methods=['POST'])
+def create_task():
+    data = request.get_json()
+    print(data)
+    return "Test"
+
 if __name__ == "__main__":
   app.run(debug=True)
 
