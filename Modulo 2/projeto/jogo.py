@@ -78,7 +78,7 @@ class Jogo:
   def iniciar_batalha(self):
     """Fazer a gesta da batalha em turnos"""
 
-    print("iniciando a baralha")
+    print("iniciando a batalha")
 
     while self.heroi.get_vida() > 0 and self.inimigo.get_vida() > 0:
       print("\nDetalhes dos Personagens")
